@@ -1,0 +1,93 @@
+{
+  "name": "ragify",
+  "version": "1.0.0",
+  "description": "Production-ready Express + TypeScript backend for a retrieval-augmented chatbot using MongoDB, Redis, Qdrant, and OpenAI.",
+  "main": "dist/index.js",
+  "scripts": {
+    "clean": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true })\"",
+    "build": "npm run clean && tsc --project tsconfig.json --outDir dist",
+    "start": "node dist/index.js",
+    "dev": "tsc-watch --onSuccess \"node dist/index.js\"",
+    "clear:chunks": "node dist/scripts/clear-chunks.js",
+    "clear:qdrant": "node dist/scripts/clear-qdrant.js",
+    "worker": "node dist/worker/ingestWorker.js",
+    "worker:ts": "ts-node src/worker/ingestWorker.ts",
+    "worker:dev": "tsc-watch --onSuccess \"node dist/worker/ingestWorker.js\"",
+    "reset:rag": "npm run clear:chunks && npm run clear:qdrant",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "test": "tsx --test src/**/*.test.ts",
+    "audit:security": "npm audit --audit-level=high",
+    "ci:verify": "npm run format:check && npm run lint && npm run build && npm run test && npm run audit:security",
+    "prepare": "node -e \"const { existsSync } = require('fs'); if (!existsSync('.git')) process.exit(0); try { require('child_process').execSync('npx husky', { stdio: 'inherit' }); } catch { process.exit(0); }\""
+  },
+  "keywords": [
+    "rag",
+    "chatbot",
+    "express",
+    "typescript",
+    "qdrant",
+    "mongodb",
+    "redis",
+    "openai"
+  ],
+  "author": "Yasir Mansoori",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.11.0",
+    "npm": ">=10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yasirmansoori/rag-ai-chatbot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yasirmansoori/rag-ai-chatbot/issues"
+  },
+  "homepage": "https://github.com/yasirmansoori/rag-ai-chatbot#readme",
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{md,json,yml,yaml}": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.26.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/formidable": "^3.4.5",
+    "@types/morgan": "^1.9.9",
+    "eslint": "^9.26.0",
+    "eslint-config-prettier": "^10.1.2",
+    "globals": "^15.15.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.2",
+    "prettier": "^3.5.3",
+    "ts-node": "^10.9.2",
+    "tsc-watch": "^6.2.1",
+    "tsx": "^4.19.4",
+    "typescript-eslint": "^8.32.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "axios": "^1.12.2",
+    "bullmq": "^5.59.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express-rate-limit": "^8.1.0",
+    "express": "^4.21.2",
+    "formidable": "^3.5.4",
+    "gpt-3-encoder": "^1.1.4",
+    "http-errors": "^2.0.0",
+    "ioredis": "^5.8.1",
+    "mongodb": "^6.17.0",
+    "morgan": "^1.10.0",
+    "uuid": "^11.1.0",
+    "winston": "^3.17.0"
+  }
+}

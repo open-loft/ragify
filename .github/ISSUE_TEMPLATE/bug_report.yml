@@ -1,0 +1,64 @@
+name: Bug report
+description: Report a reproducible defect in the API, worker, or deployment setup.
+title: "bug: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for filing a report. Please include enough detail for someone new to the project to reproduce the issue quickly.
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      description: One-sentence description of the problem.
+      placeholder: Upload requests fail when forceReingest=true
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Include curl commands, payloads, sample files, or logs when possible.
+      placeholder: |
+        1. Start services with docker compose up
+        2. POST /api/v1/upload/upload
+        3. Observe 500 response
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      options:
+        - API
+        - Worker
+        - Docker / deployment
+        - Documentation
+        - CI / tooling
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment details
+      description: Include OS, Node version, Docker version, and dependency versions if relevant.
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Stack traces, screenshots, or related issue links.

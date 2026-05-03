@@ -1,0 +1,43 @@
+name: Feature request
+description: Propose a product, API, developer-experience, or deployment improvement.
+title: "feat: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem statement
+      description: What user or operator problem does this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the desired behavior, API shape, or workflow.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Expected impact area
+      options:
+        - Ingestion
+        - Retrieval / chat quality
+        - Security
+        - Self-hosting / Docker
+        - CI / contributor workflow
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: rollout
+    attributes:
+      label: Rollout notes
+      description: Mention docs, migration steps, or breaking changes if you already know them.
