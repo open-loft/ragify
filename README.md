@@ -1,6 +1,6 @@
 # Ragify
 
-[![Release](https://img.shields.io/github/v/release/yasirmansoori/rag-ai-chatbot?display_name=tag)](https://github.com/yasirmansoori/rag-ai-chatbot/releases)
+[![Release](https://img.shields.io/github/v/release/open-loft/ragify?display_name=tag)](https://github.com/open-loft/ragify/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
 
 Production-oriented Express + TypeScript backend for Ragify, a retrieval-augmented chatbot. It accepts document uploads, ingests them asynchronously through BullMQ workers, stores chunks in MongoDB and vectors in Qdrant, then answers questions through retrieval-grounded OpenAI responses streamed back to clients.
@@ -62,8 +62,8 @@ Detailed diagrams and flow descriptions live in `docs/architecture.md` and `docs
 1. Clone and install dependencies:
 
 ```bash
-git clone https://github.com/yasirmansoori/rag-ai-chatbot.git
-cd rag-ai-chatbot/server
+git clone https://github.com/open-loft/ragify.git
+cd ragify/server
 npm install
 ```
 

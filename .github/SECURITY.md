@@ -10,7 +10,7 @@ Please do not open public issues for suspected vulnerabilities.
 
 Instead, use GitHub's private security advisory flow:
 
-- https://github.com/yasirmansoori/rag-ai-chatbot/security/advisories/new
+- https://github.com/open-loft/ragify/security/advisories/new
 
 If private advisories are unavailable for your environment, contact the maintainer through the repository profile and include:
 

@@ -41,12 +41,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yasirmansoori/rag-ai-chatbot.git"
+    "url": "git+https://github.com/open-loft/ragify.git"
   },
   "bugs": {
-    "url": "https://github.com/yasirmansoori/rag-ai-chatbot/issues"
+    "url": "https://github.com/open-loft/ragify/issues"
   },
-  "homepage": "https://github.com/yasirmansoori/rag-ai-chatbot#readme",
+  "homepage": "https://github.com/open-loft/ragify#readme",
   "lint-staged": {
     "*.ts": [
       "eslint --fix",
