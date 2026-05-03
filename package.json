@@ -85,7 +85,7 @@
     "gpt-3-encoder": "^1.1.4",
     "http-errors": "^2.0.0",
     "ioredis": "^5.8.1",
-    "mongodb": "^6.17.0",
+    "mongodb": "^7.2.0",
     "morgan": "^1.10.0",
     "uuid": "^11.1.0",
     "winston": "^3.17.0"
